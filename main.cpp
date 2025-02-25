@@ -12,17 +12,41 @@ class Task
 	}
 };
 
-class TodoList
-{
+class TodoList{
 	
-	public:
+public:
 	std::vector<Task> todolist;
-	TodoList(){}
+	void AddTask(const std::string & description){
+		todolist.push_back(Task(description));
+        	//todolist.emblace_back(description);
+	}
+
 };
 
 int main() {
 
-    TodoList todo = TodoList();
+TodoList todo;
+std:: string input;
+
+std::cout<< "What task would you like to add?, write done when you are finished"<<std::endl;
+
+	
+	while (true) {
+		std::cout << " - ";
+		std::getline (std::cin, input);
+	
+		if (input=="done") {
+		break;
+	
+		}
+		todo.AddTask(input);
+	}
 
     return 0;
 }
+
+
+
+
+
+
