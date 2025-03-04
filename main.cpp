@@ -20,6 +20,9 @@ class TodoList{
 		todolist.push_back(Task(description));
         	//todolist.emblace_back(description);
 	}
+	void DeleteTask(const std::string & description){
+		todolist.pop_back(Task(description));
+	}
 
 };
 
@@ -93,7 +96,20 @@ TodoList todo;
 			
 		//Delete task
 		else if (chosenFunction == 4){
-			//Delete task
+			std::cout<< "What task(s) would you like to delete? \nWrite 'done' when you are finished"<<std::endl;
+
+			while (true) {
+				for 
+				std::cout << " - ";
+				std::getline (std::cin, input);
+			
+				if (input == "done") {
+				break;
+			
+				}
+				todo.DeleteTask(input);
+			}
+			chosenFunction = 0;
 		}
 		
 		//Mark task as done
