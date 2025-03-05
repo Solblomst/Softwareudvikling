@@ -20,8 +20,8 @@ class TodoList{
         	//todolist.emblace_back(description);
 
 	}
-	void DeleteTask(const std::string & description){
-		todolist.pop_back(Task(description));
+	void DeleteTask(){
+		todolist.pop_back(Task);
 	}
 
 	void EditTasks(const std::string & description){
@@ -43,20 +43,21 @@ TodoList todo;
 	while (isRunning = true){
 	
 		int chosenFunction = 0;
+	
+		std::cout << "Welcome!" << std::endl;
+		std::cout << "Choose a function to get started:" << std::endl;
+		std::cout << "1. Add task(s)" << std::endl;
+		std::cout << "2. See all tasks" << std::endl;
+		std::cout << "3. Edit task" << std::endl;
+		std::cout << "4. Delete task" << std::endl;
+		std::cout << "5. Mark task as done" << std::endl;
+		std::cout << "6. Exit list" << std::endl;
+		std::cout << "*Please enter the number of the function, you'd like to use:" << std::endl;
 		
-		if (chosenFunction == 0){
-			std::cout << "Welcome!" << std::endl;
-			std::cout << "Choose a function to get started:" << std::endl;
-			std::cout << "1. Add task(s)" << std::endl;
-			std::cout << "2. See all tasks" << std::endl;
-			std::cout << "3. Edit task" << std::endl;
-			std::cout << "4. Delete task" << std::endl;
-			std::cout << "5. Mark task as done" << std::endl;
-			std::cout << "6. Exit list" << std::endl;
-			std::cout << "*Please enter the number of the function, you'd like to use:" << std::endl;
-			
-			std::cin >> chosenFunction;
-		}
+		std::cin >> chosenFunction;
+		
+		
+		
 		//Add task
 		else if (chosenFunction == 1){
 			std::cout<< "What task would you like to add?, write 'done' when you are finished"<<std::endl;
@@ -72,7 +73,7 @@ TodoList todo;
 				}
 				todo.AddTask(input);
 			}
-			chosenFunction = 0;
+			continue;
 		}
 		
 		//See all tasks
@@ -90,13 +91,14 @@ TodoList todo;
 				std::string input = "";
 				std::cin >> input;
 				if (input == "done"){
-					chosenFunction = 0;
+					continue;
 				}
 			}
 		}
 			
 		//Edit task
 		else if (chosenFunction == 3){
+
 			//tjek om brugeren er tilfreds med hans opgaver eller om brugeren vil ændre det
 			std::cout >> "are you satisfired" >> std::endl;
 			std::string svar;
@@ -125,6 +127,9 @@ TodoList todo;
 		//Delete task
 		else if (chosenFunction == 4){
 			std::cout<< "What task(s) would you like to delete? \nWrite 'done' when you are finished"<<std::endl;
+			for (int i = 0; i < todo.size(); i++){
+				std::cout << i + 1 << ": " << todo[i] << std::endl;
+			}
 
 			while (true) {
 				for 
@@ -135,14 +140,15 @@ TodoList todo;
 				break;
 			
 				}
-				todo.DeleteTask(input);
+				todo.DeleteTask(input-1);
+			continue;
 			}
-			chosenFunction = 0;
 		}
 		
 		//Mark task as done
 		else if (chosenFunction == 5){
 			//Mark as done
+			continue;
 		}
 		
 		//Exit the loop
@@ -154,6 +160,7 @@ TodoList todo;
 		//Other input has been given to choose task
 		else {
 			std::cout << "Please type one of the valid numbers" << std::endl;
+			continue;
 		}
 	}
     return 0;
