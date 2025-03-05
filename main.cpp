@@ -2,7 +2,6 @@
 #include <fstream>
 #include <string>
 #include <vector>
-
 class Task
 {
 	public:
@@ -19,6 +18,7 @@ class TodoList{
 	void AddTask(const std::string & description){
 		todolist.push_back(Task(description));
         	//todolist.emblace_back(description);
+
 	}
 	void DeleteTask(const std::string & description){
 		todolist.pop_back(Task(description));
@@ -130,6 +130,7 @@ TodoList todo;
 	}
     return 0;
 }
+
 
 
 
