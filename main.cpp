@@ -24,7 +24,13 @@ class TodoList{
 		todolist.pop_back(Task(description));
 	}
 
+	void EditTasks(const std::string & description){
+		
+	}
 };
+
+
+
 
 int main() {
 
@@ -91,7 +97,29 @@ TodoList todo;
 			
 		//Edit task
 		else if (chosenFunction == 3){
-			//Edit task
+			//tjek om brugeren er tilfreds med hans opgaver eller om brugeren vil ændre det
+			std::cout >> "are you satisfired" >> std::endl;
+			std::string svar;
+			std::cin << svar;
+			
+			while (true) {	
+			
+			if (svar=="yes") {
+			//hvis svar er yes, så gør intet
+			false;
+			}
+			
+			if (svar=="no") {
+				std::cout << " - ";
+				std::string input;
+				std::getline (std::cin, input);
+			
+			TodoList[i] = input;
+			
+			}
+			
+			continue;
+			
 		}
 			
 		//Delete task
