@@ -56,7 +56,8 @@ TodoList todo;
 		std::cout << "3. Edit task" << std::endl;
 		std::cout << "4. Delete task" << std::endl;
 		std::cout << "5. Mark task as done" << std::endl;
-		std::cout << "6. Exit list" << std::endl;
+		std::cout << "6. sort task as priority" << std::endl;
+		std::cout << "7. Exit list" << std::endl;
 		std::cout << "*Please enter the number of the function, you'd like to use:" << std::endl;
 		
 		std::cin >> chosenFunction;
@@ -160,8 +161,24 @@ TodoList todo;
 			continue;
 		}
 		
-		//Exit the loop
+		
+		//As a user, I want to prioritize my tasks so that I can focus on the most important ones first.
 		else if (chosenFunction == 6){
+		
+		
+		//prioritering i medium, low og very importent grad 
+		//int oprettes 
+		//brugeren skal selv skrive om de vil give dem prioriteringer
+		
+			}
+			
+			continue;
+		}
+		
+		
+		
+		//Exit the loop
+		else if (chosenFunction == 7){
 			std::cout << "Goodbye!" << std::endl;
 			isRunning = false;
 		}
