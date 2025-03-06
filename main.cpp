@@ -8,6 +8,11 @@ class Task
 	std::string _description;
 	Task(std::string description){
 		_description = description;
+	bool _isDone;
+	}
+	
+	void MarkAsDone(int index) {
+		_isDone = true;
 	}
 };
 
@@ -78,14 +83,14 @@ TodoList todo;
 		
 		//See all tasks
 		else if (chosenFunction == 2){
-			if (todo.empty()){
+			if (Todo.empty()){
 				std::cout << "No tasks currently available\nPlease input new tasks" << std::endl;
 				chosenFunction = 0;
 			}
 			else if (!TodoList.empty()){
 				int sizeOfList = TodoList.size();
 				for (int i = 0; i < sizeOfList; ++i){
-					std::cout << "- " << TodoList[i] << std::endl;
+					std::cout << "- " << todoList[i] << std::endl;
 				}
 				std::cout << "Write 'done' to return to functions" << std::endl;
 				std::string input = "";
@@ -148,7 +153,9 @@ TodoList todo;
 		//Mark task as done
 		else if (chosenFunction == 5){
 			//Mark as done
-			
+			if (index >= 0 && index < todolist.size()) {
+				Todolist[index].MarkAsDone();
+			}
 			
 			continue;
 		}
