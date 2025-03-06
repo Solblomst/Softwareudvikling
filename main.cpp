@@ -40,7 +40,7 @@ TodoList todo;
 	
 	bool isRunning = true;
 	
-	while (isRunning = true){
+	while (isRunning == true){
 	
 		int chosenFunction = 0;
 	
@@ -59,7 +59,7 @@ TodoList todo;
 		
 		
 		//Add task
-		else if (chosenFunction == 1){
+		if (chosenFunction == 1){
 			std::cout<< "What task would you like to add?, write 'done' when you are finished"<<std::endl;
 
 			while (true) {
@@ -148,6 +148,8 @@ TodoList todo;
 		//Mark task as done
 		else if (chosenFunction == 5){
 			//Mark as done
+			
+			
 			continue;
 		}
 		
